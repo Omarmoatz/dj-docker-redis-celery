@@ -1,11 +1,9 @@
 from django.shortcuts import render
 import time
 
+from .tasks import send_emails
 
 def send_campaign_emails(request):
-    students = ['omar', 'ahmed', 'mohamed', 'moataz', 'john', 'mark', 'osama', 'khaled', 'essam']
-    for name in students:
-        print(f'sending email to {name}')
-        time.sleep(1)
-
+    # students = ['omar', 'ahmed', 'mohamed', 'moataz', 'john', 'mark', 'osama', 'khaled', 'essam']  
+    send_emails.delay()
     return render(request, 'udemy.html', {})
