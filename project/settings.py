@@ -128,7 +128,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # save Celery task results in Django's database
 # CELERY_RESULT_BACKEND = "django-db"
 
-# save Celery task results in redis
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-CELERY_BROKER_URL = 'redis://localhost:6379'
-# CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+# # save Celery task results in redis
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+# CELERY_BROKER_URL = 'redis://localhost:6379'
+
+# Celery configration with Docker
+CELERY_RESULT_BACKEND = 'redis://djredis:6379'
+CELERY_BROKER_URL = 'redis://djredis:6379'
