@@ -1,8 +1,10 @@
-# setup service
+# setup service(containers)
+
+# i should use docker-compose latest version
 version: '3'
 
 services:
-  djangoserver:
+  djangoserver: # container name
     container_name: dj-backend
     build: .
     command: python manage.py runserver 0.0.0.0:8000
